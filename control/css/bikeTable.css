@@ -1,0 +1,57 @@
+thead > tr {
+    background-color : #1d3252;
+    color            : #fff;
+}
+
+tbody > tr {
+    background-color : #ffffff;
+}
+
+.small-input {
+    width : 100px;
+}
+
+.highlight {
+    background-color : #aac6cd;
+}
+
+.highlight > td > input,
+.highlight > td > select {
+    background-color : #c5cdcd;
+}
+
+.hidden-button {
+    display : none;
+}
+
+.green {
+    color : green;
+}
+
+.red {
+    color : red;
+}
+
+.fixed-width {
+    width : 100px;
+}
+
+.page-content {
+    display: none;
+}
+
+.loading {
+    display: block;
+    text-align: center;
+}
+
+.loading > i {
+    font-size: 3em;
+}
+
+.right-floater {
+    float: right;
+}
+th > .right-floater > a {
+    color : #fff;
+}

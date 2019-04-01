@@ -1,0 +1,140 @@
+body {
+    overflow-x : hidden;
+    color      : rgb(28, 35, 66);
+}
+
+hr {
+    border : 1px solid rgb(28, 35, 66);
+}
+
+.opening-hours-table {
+    font-size : 1.5em;
+}
+
+.page-content {
+    width : 100%;
+}
+
+.page-content:after {
+    content : '';
+    display : table;
+    clear   : both
+}
+
+.opening-hours-container,
+.contact {
+    /*padding  : 0 10% 0 10%;*/
+}
+
+.contact-picture {
+    width : 100%;
+}
+
+.bigger-text {
+    font-size : 1.2em;
+}
+
+.logo {
+    height                : 90%;
+    -webkit-box-shadow    : 0 0 100px 20px #000;
+    box-shadow            : 0 0 100px 20px #000;
+    -webkit-border-radius : 20px;
+    border-radius         : 20px;
+    -moz-transform        : rotate(-15deg) translateX(30px) translateY(30px);
+    -webkit-transform     : rotate(-15deg) translateX(30px) translateY(30px);
+    -o-transform          : rotate(-15deg) translateX(30px) translateY(30px);
+    -ms-transform         : rotate(-15deg) translateX(30px) translateY(30px);
+    transform             : rotate(-15deg) translateX(30px) translateY(30px);
+}
+
+.images {
+    width : 100%;
+}
+
+.top {
+    height   : 5em;
+    width    : 100%;
+    overflow : hidden;
+}
+
+.well {
+    font-size : 2em;
+}
+
+.banner-home {
+    background-image : url("../img/banner/eindwerk.jpeg");
+}
+
+.banner-men {
+    background-image : url("../img/banner/men.jpg");
+}
+
+.banner-woman {
+    background-image : url("../img/banner/woman.jpg");
+}
+
+.banner-kids {
+    background-image : url("../img/banner/kids.jpg");
+}
+
+.banner-contact {
+    background-image : url("../img/banner/contact.jpg");
+}
+
+.banner-ebike {
+    background-image : url("../img/banner/ebike.jpg");
+}
+
+.banner-projects {
+    background-image : url("../img/banner/projects.jpg");
+}
+
+.banner-home,
+.banner-men,
+.banner-woman,
+.banner-kids,
+.banner-contact,
+.banner-ebike,
+.banner-projects {
+    width               : 100%;
+    background-position : center;
+    background-size     : cover;
+    height              : 300px;
+    background-repeat   : no-repeat;
+}
+
+@media screen and (min-width : 769px) {
+    .banner-home,
+    .banner-men,
+    .banner-woman,
+    .banner-kids,
+    .banner-contact,
+    .banner-ebike,
+    .banner-projects {
+        height : 300px;
+    }
+}
+
+@media screen and (min-device-width : 481px) and (max-device-width : 768px) {
+    .banner-home,
+    .banner-men,
+    .banner-woman,
+    .banner-kids,
+    .banner-contact,
+    .banner-ebike,
+    .banner-projects {
+        height : 250px;
+    }
+}
+
+@media screen and (max-device-width : 480px) {
+    .banner-home,
+    .banner-men,
+    .banner-woman,
+    .banner-kids,
+    .banner-contact,
+    .banner-ebike,
+    .banner-projects {
+        height : 200px;
+    }
+}

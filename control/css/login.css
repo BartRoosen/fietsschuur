@@ -1,0 +1,18 @@
+body {
+    font-size : 1.5em;
+}
+
+.login-form-center {
+    overflow              : hidden;
+    width                 : 30%;
+    margin-left           : 35%;
+    margin-top            : 10em;
+    -webkit-box-shadow    : 0 0 30px 2px #000000;
+    box-shadow            : 0 0 30px 2px #000000;
+    -webkit-border-radius : 20px 20px 20px 20px;
+    border-radius         : 20px 20px 20px 20px;
+}
+
+.form-container {
+    padding : 1em;
+}
