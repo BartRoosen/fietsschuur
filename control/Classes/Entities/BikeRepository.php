@@ -70,7 +70,7 @@ class BikeRepository extends AbstractRepository
     {
         $bikes = [];
         foreach ($dataRows as $row) {
-            $id   = $row['bikeId'];
+            $id   = (int) $row['bikeId'];
             $bike = new Bike();
             $bike->setId($id);
             $bike->setPrice($row['price']);
@@ -137,7 +137,7 @@ class BikeRepository extends AbstractRepository
     {
         $sql   = 'UPDATE bikes SET FL_DISPLAY = :FL_DISPLAY WHERE AI_BIKE = :AI_BIKE;';
         $binds = [
-            'FL_DISPLAY' => $isVisible,
+            'FL_DISPLAY' => false === $isVisible ? 0 : 1,
             'AI_BIKE'    => $id,
         ];
 

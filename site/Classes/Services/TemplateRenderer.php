@@ -90,20 +90,20 @@ class TemplateRenderer
         $this->getBikesByGender($page);
         $this->setTemplateHtml();
 
-        if (empty($this->bikes)) {
-            $title = '';
-            switch ($page) {
-                case 'men':
-                    $title = 'heren';
-                    break;
-                case 'woman':
-                    $title = 'dames';
-                    break;
-                case 'kids':
-                    $title = 'kinder';
-                    break;
-            }
+        $title = '';
+        switch ($page) {
+            case 'men':
+                $title = 'heren';
+                break;
+            case 'woman':
+                $title = 'dames';
+                break;
+            case 'kids':
+                $title = 'kinder';
+                break;
+        }
 
+        if (empty($this->bikes)) {
             return sprintf(self::NO_BIKES_AVAILABLE, $title);
         }
 
@@ -138,9 +138,9 @@ class TemplateRenderer
 
                 $pictureLink = file_exists($coverPhotoPath) ? $coverPhotoPath : self::DEFAULT_FOTO;
 
-                if (file_exists($coverPhotoPath)) {
-                    $pictureLink = $coverPhotoPath;
-                }
+//                if (file_exists($coverPhotoPath)) {
+//                    $pictureLink = $coverPhotoPath;
+//                }
 
                 $this->html .= sprintf(
                     $this->templateHtml,
@@ -155,6 +155,10 @@ class TemplateRenderer
                     '0.00' === $price ? '' : sprintf('€ %s', $price)
                 );
             }
+        }
+
+        if ('' === $this->html) {
+            return sprintf(self::NO_BIKES_AVAILABLE, $title);
         }
 
         return $this->html;

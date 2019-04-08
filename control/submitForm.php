@@ -37,7 +37,7 @@ switch ($_GET['action']) {
         break;
     case 'toggleVisibility':
         $formSubmitter = new FormSubmitter();
-        $formSubmitter->toggleVisibility($_GET['id'], $_GET['isvisible']);
+        $formSubmitter->toggleVisibility($_GET['id'], (bool) $_GET['isvisible']);
         break;
     case 'addSetting':
         if (isset($_GET['table'], $_POST)) {
