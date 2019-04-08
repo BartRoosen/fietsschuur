@@ -19,18 +19,18 @@ class FormSubmitter
         $bike     = new Bike();
 
         if (isset($post['id'])) {
-            $bike->setId($post['id']);
+            $bike->setId((int) $post['id']);
         }
 
         '' === $post['price'] ? $bike->setPrice(0.00) : $bike->setPrice($post['price']);
         $post['sold'] = '' === $post['sellDate'] ? 0 : 1;
         '' === $post['sellDate'] ? $bike->setSellDate(null) : $bike->setSellDate($post['sellDate']);
         $bike->setSold($post['sold']);
-        '' === $post['gender'] ? $bike->setGenderId(null) : $bike->setGenderId($post['gender']);
-        '' === $post['type'] ? $bike->setTypeId(null) :  $bike->setTypeId($post['type']);
-        '' === $post['frameSize'] ? $bike->setSizeFrameId(null) : $bike->setSizeFrameId($post['frameSize']);
-        '' === $post['wheelSize'] ? $bike->setSizeWheelId(null) : $bike->setSizeWheelId($post['wheelSize']);
-        '' === $post['brand'] ? $bike->setBrandId(null) : $bike->setBrandId($post['brand']);
+        '' === $post['gender'] ? $bike->setGenderId(null) : $bike->setGenderId((int) $post['gender']);
+        '' === $post['type'] ? $bike->setTypeId(null) :  $bike->setTypeId((int) $post['type']);
+        '' === $post['frameSize'] ? $bike->setSizeFrameId(null) : $bike->setSizeFrameId((int) $post['frameSize']);
+        '' === $post['wheelSize'] ? $bike->setSizeWheelId(null) : $bike->setSizeWheelId((int) $post['wheelSize']);
+        '' === $post['brand'] ? $bike->setBrandId(null) : $bike->setBrandId((int) $post['brand']);
 
         $bikeRepo->insert($bike);
     }
@@ -75,19 +75,6 @@ class FormSubmitter
         if (isset($tables::TABLES[$table])) {
             $column = $tables::TABLES[$table];
         }
-//        $table = $post['table']
-//
-//        switch ($post['table']) {
-//            case $tables::TABLE_BRANDS:
-//                $table  = $tables::TABLE_BRANDS;
-//                $column = $tables::TABLES[$tables::TABLE_BRANDS];
-//                $value  = $post['value'];
-//                break;
-//            case $tables::TABLE_SIZE_FRAME:
-//                break;
-//            case $tables::TABLE_SIZE_WHEEL:
-//                break;
-//        }
 
         if ('' !== $table && '' !== $column && '' !== $value) {
             $sql  = sprintf($format, $table, $column, $value);
@@ -102,10 +89,10 @@ class FormSubmitter
         $infoRepo = new ExtraInfoRepository();
 
         if ('' !== $post['info_id']) {
-            $info->setId($post['info_id']);
+            $info->setId((int) $post['info_id']);
         }
 
-        $info->setBikeId($post['bike_id']);
+        $info->setBikeId((int) $post['bike_id']);
         $info->setInfo($post['info']);
 
         $infoRepo->insert($info);
